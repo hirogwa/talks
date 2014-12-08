@@ -1,7 +1,7 @@
 #+TITLE: Emacs - Practical Introduction to the Adictive Editor
 #+AUTHOR: Hiroki Nakagawa
 
-* HOLA!
+* HELLO!
 
 * BACKGROUND
 
@@ -85,21 +85,21 @@ C-g
 
 * MODE
 
-** Major mode
+** major mode
 
 .txt .py .cpp .java .org ...
 
 - "specialized facilities for working on a particular file type"
 - "mutually exclusive"
 
-** Minor mode
+** minor mode
 
 - "optional features which you can turn on or off"
 - "not necessarily specific to a type of file or buffer"
 
 find, write, use minor modes ⊂ customizing Emacs
 
-** using a mode 1 - built-in modes
+** using mode 1/5 - built-in modes
 
 *** example: switching between major modes
 
@@ -138,7 +138,7 @@ try C-x b, C-x C-f, ...
 
 M-x whitespace-mode
 
-** using a mode 2 - global setting at startup
+** using mode 2/5 - global setting at startup
 
 introducing ~/.emacs.d/init.el
 turn on ido-mode globally
@@ -150,7 +150,7 @@ turn on ido-mode globally
 
 restart and see what happens
 
-** using a mode 3 - adding a package
+** using mode 3/5 - adding package
 
 *** introducing C-h f and C-x C-b
 
@@ -171,7 +171,7 @@ M-x package-list-package
 
 M-x nlinum-mode
 
-** using a mode 4 - adding an external package
+** using mode 4/5 - external package
 
 *** example: org-tree-slide-mode (minor)
 
@@ -198,7 +198,7 @@ installation steps
 
 M-x org-tree-slide-mode
 
-** using a mode 5 - using a package manager
+** using mode 5/5 - package manager
 
 notice the annoyance
 
@@ -287,7 +287,7 @@ auto delete at save
 
 ** TODO Python
 
-* PACKAGE MANAGEMENT REVISITED
+* MANAGE YOUR PACKAGES BETTER
 
 ** TODO modularizing init files
 ** TODO exporting and syncing configuration
@@ -296,16 +296,20 @@ auto delete at save
 
 ** thoughts on why and why not
 
-- highly highly configurable
+*** power of extensibility
 
-- we work in teams
+*** we work in teams
 
-- "there must be something"
+*** "there must be something"
 
 [[https://twitter.com/yukihiro_matz/status/539596365865578496][matz (Yukihiro Matsumoto) on twitter]]
 
 [[http://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life][matz (Yukihiro Matsumoto) on slideshare]]
 
-- exposure to the "new language"
+"Emacs..."
+- "taught me freedom for software"
+- "taught me how to read code"
+- "raught me power of Lisp"
+- "made me a hacker"
 
-* DANKE SCHOEN!
+* THANK YOU!
