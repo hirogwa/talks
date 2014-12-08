@@ -242,7 +242,7 @@ M-x package-list-package
 (color-theme-subtle-hacker)
 #+END_SRC
 
-* MORE CUSTOMIZING FOR REAL SCENARIOS
+* CUSTOMIZING FOR SOME SCENARIOS
 
 ** general programming
 
