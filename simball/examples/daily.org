@@ -1,0 +1,35 @@
+* Road to Simba
+** OPFAIR at SFU
+   SCHEDULED: <2014-02-06 Thu>
+
+*** [[http://opfair.ca/][Official website]]
+*** TODO buy a decent jacket
+*** TODO finish your resume already!
+*** TODO awesome photo for LinkedIn
+
+** Interview
+   SCHEDULED: <2014-03-11 Tue>
+
+*** TODO prep...
+- my past projects?
+- basic algorithms?
+- who is Adrian?
+
+** Offered!
+*** TODO get SIN
+*** first day
+    SCHEDULED: <2014-05-05 Mon>
+
+* Everyday random stuff
+** TODO book Airbnb at Seattle
+   DEADLINE: <2014-12-15 Mon>
+
+* LL stuff
+** LL practice run
+   SCHEDULED: <2014-12-08 Mon>
+** TODO book room for LL
+   SCHEDULED: <2014-12-11 Thu>
+
+* SFU coop stuff
+** submit supervisor feedback (Toar)
+   DEADLINE: <2014-12-10 Wed>
