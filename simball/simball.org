@@ -170,11 +170,11 @@ revisit...
 
 not built in
 
-M-x package-list-package
-
 "show line numbers in the margin"
 
 [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
+
+M-x package-list-package
 
 M-x nlinum-mode
 
