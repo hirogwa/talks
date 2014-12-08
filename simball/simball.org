@@ -204,6 +204,12 @@ notice the annoyance
 
 introducing [[http://melpa.org][MELPA]]
 
+*** example: highlight-current-line
+
+[[http://melpa.org/#/highlight-current-line][highlight-current-line]]
+
+M-x package-list-package
+
 #+BEGIN_SRC emacs-lisp
 (require 'package)
 (add-to-list 'package-archives
@@ -216,7 +222,7 @@ introducing [[http://melpa.org][MELPA]]
   (normal-top-level-add-subdirs-to-load-path))
 #+END_SRC
 
-*** example: highlight-current-line
+M-x package-list-package
 
 #+BEGIN_SRC emacs-lisp
 (require 'highlight-current-line)
@@ -224,6 +230,8 @@ introducing [[http://melpa.org][MELPA]]
 #+END_SRC
 
 *** example: color-theme
+
+[[http://melpa.org/#/color-theme][color-theme]]
 
 #+BEGIN_SRC emacs-lisp
 (require 'color-theme)
