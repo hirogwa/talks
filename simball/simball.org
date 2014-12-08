@@ -1,32 +1,51 @@
 #+TITLE: Emacs - Practical Introduction to the Adictive Editor
 #+AUTHOR: Hiroki Nakagawa
 
-* HOLA!
+* HELLO!
+
 * BACKGROUND
+
 ** about this talk
 
-This is the talk about me playing with Emacs for about two weeks.
+*** What is Emacs?
 
-Why?
+[[http://en.wikipedia.org/wiki/Emacs][Emacs - Wikipedia]]
+
+"Emacs /ˈiːmæks/ and its derivatives are a family of text editors
+ that are characterized by their extensibility"
+
+This talk is about my playing with Emacs for about two weeks.
+- your Emacs environment grows as you use it
+- we want some base knowledge for a start
+
+*** Why?
+
 - "looks cool"
 - "good engineers use it"
 - "not an editor but an environment?"
 - "programmable editor?"
 
-Who?
+*** Who?
 
 ** editors and you
 
 What editors/IDEs do you use?
 
 [[http://www.google.ca/trends/explore#q%3D%252Fm%252F01yp0m%252C%2520%252Fm%252F07zh7%252C%2520%252Fm%252F0b6h18n%252C%2520%252Fm%252F0_x5x3g&cmpt%3Dq][trends 1]]
+
 [[http://www.google.ca/trends/explore#q%3D%252Fm%252F01yp0m%252C%2520%252Fm%252F07zh7%252C%2520%252Fm%252F0b6h18n%252C%2520%252Fm%252F01fs1d%252C%2520%252Fm%252F01r_y0&cmpt%3Dq][trends 2]]
 
 * GETTING STARTED WITH EMACS
+
 ** navigation
 
 - no Vim-like mode
+
 - naviate Emacs way
+
+C: control
+M: "meta" (alt/option)
+
 C-n, C-p, C-f, C-b
 C-a, C-e
 C-d
@@ -44,40 +63,61 @@ C-x C-f
 C-x s
 
 ** more operations
-- getting help
+
+- help
 C-h k
+
 - buffers
 C-x C-b
 C-x b
 C-x k
+
 - windows
 C-x o
 C-x 2
 C-x 3
-- mergency call
-C-g
-** getting help and emergency call
+
+** emergency calls
+
 - windows
 C-x 1
+
 - command
 C-g
 
 * MODE
-** mode?
-*** Major mode
+
+** major mode
+
 .txt .py .cpp .java .org ...
 
 - "specialized facilities for working on a particular file type"
 - "mutually exclusive"
 
-*** Minor mode
+** minor mode
+
 - "optional features which you can turn on or off"
 - "not necessarily specific to a type of file or buffer"
 
-** example 1/5: Org mode (Major)
+find, write, use minor modes ⊂ customizing Emacs
+
+** using mode 1/5 - built-in modes
+
+*** example: switching between major modes
+
+introducing M-x
+
+C-h k M-x
+
+M-x python-mode
+M-x c-mode
+M-x text-mode
+
+*** example: org mode (major)
 
 "personal information management and outlining tool for Emacs"
-[[http://orgmode.org/][Home page]]
+
+[[http://orgmode.org/][org mode]]
 
 task management
 - org-todo (C-c C-t)
@@ -86,85 +126,170 @@ task management
 
 export
 
-** example 2/5: org-tree-slide-mode (Minor)
-
-"org buffer as a slide"
-[[https://github.com/takaxp/org-tree-slide][GitHub repo]]
-
-M-x org-tree-slide-mode-on
-
-... by the way, export?
-
-** example 3/5: ido Mode
+*** example: ido mode (minor)
 
 [[http://www.emacswiki.org/InteractivelyDoThings][Interactively Do Things]]
 
 M-x ido-mode
+
 try C-x b, C-x C-f, ...
 
-** example 4/5: whitespace mode
+*** example: whitespace mode (minor)
 
 [[http://www.emacswiki.org/emacs/WhiteSpace][White Space]]
 
 M-x whitespace-mode
 
-** example 5/5: nlinum
+** using mode 2/5 - global setting at startup
+
+introducing ~/.emacs.d/init.el
+turn on ido-mode globally
+
+#+BEGIN_SRC emacs-lisp
+(require 'ido)
+(ido-mode t)
+#+END_SRC
+
+restart and see what happens
+
+** using mode 3/5 - adding package
+
+*** introducing C-h f and C-x C-b
+
+what are they?
+
+revisit...
+- python-mode
+- ido-mode
+- whitespace-mode
+
+*** example: nlinum (minor)
+
+M-x package-list-package
 
 "show line numbers in the margin"
+
 [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
 
 M-x nlinum-mode
 
-* CUSTOMIZE
+** using mode 4/5 - external package
 
-** packaging and ~/.emacs.d/
+*** example: org-tree-slide-mode (minor)
 
-How did they work?
+"org buffer as a slide"
 
-C-h f whitespace-mode
-C-h f ido-mode
+[[https://github.com/takaxp/org-tree-slide][org-tree-slide (GitHub repo)]]
 
-C-h f nlinum
-C-h f org-tree-slide-mode
+M-x package-list-packge?
 
-** installing a package 1/3
+revisit nlinum
+- where is it installed?
+- introducing C-h v
+- load-path
+
+installation steps
+- get source
+- add load-path
+- require
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/org-tree-slide/")
+(require 'org-tree-slide)
+#+END_SRC
+
+M-x org-tree-slide-mode
+
+** using mode 5/5 - package manager
+
+notice the annoyance
+
+introducing [[http://melpa.org][MELPA]]
+
+*** example: highlight-current-line
+
+[[http://melpa.org/#/highlight-current-line][highlight-current-line]]
 
 M-x package-list-package
-install nlinum
 
-** installing a package 2/3
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+#+END_SRC
 
-M-x package-list-package...?
-install org-tree-slide-mode
+#+BEGIN_SRC emacs-lisp
+(let ((default-directory "~/.emacs.d/elpa/"))
+  (normal-top-level-add-subdirs-to-load-path))
+#+END_SRC
 
-** installing a package 3/3
+M-x package-list-package
 
-adding package archives
+#+BEGIN_SRC emacs-lisp
+(require 'highlight-current-line)
+(global-hl-line-mode t)
+#+END_SRC
 
-[[http://melpa.org][MELPA]]
-example: highlight-current-line
-example: color-theme
+*** example: color-theme
 
-* MORE ON CUSTOMIZING
+[[http://melpa.org/#/color-theme][color-theme]]
+
+#+BEGIN_SRC emacs-lisp
+(require 'color-theme)
+(color-theme-initialize)
+(setq color-theme-is-global t)
+(color-theme-subtle-hacker)
+#+END_SRC
+
+* CUSTOMIZING FOR SOME SCENARIOS
 
 ** general programming
 
 *** nlinum revisited
 
-global mode
+make it global
+
+#+BEGIN_SRC emacs-lisp
+(require 'nlinum)
+(global-nlinum-mode 1)
+#+END_SRC
 
 *** whitespace-mode revisited
 
-global mode
-add-hook
+make it global
+
+#+BEGIN_SRC emacs-lisp
+(global-whitespace-mode 1)
+(setq whitespace-style (quote (face trailing tabs lines)))
+#+END_SRC
+
+auto delete at save
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook (lambda() (untabify (point-min) (point-max))))
+#+END_SRC
 
 *** auto-complete
 
-global-auto-complete-mode
+"The most intelligent auto-completion extension for GNU Emacs"
+
+[[http://cx4a.org/software/auto-complete/][Auto Complete Mode]]
+
+[[http://melpa.org/#/auto-complete][auto-complete (MELPA)]]
+
+- install
+- make it global
+
+#+BEGIN_SRC emacs-lisp
+(require 'auto-complete)
+(global-auto-complete-mode t)
+#+END_SRC
 
 ** TODO Python
 
-* PACKAGE MANAGEMENT REVISITED
+* MANAGE YOUR PACKAGES BETTER
 
 ** TODO modularizing init files
 ** TODO exporting and syncing configuration
@@ -173,13 +298,20 @@ global-auto-complete-mode
 
 ** thoughts on why and why not
 
-- highly highly configurable
-- we work in teams
-- "there must be something"
+*** power of extensibility
+
+*** we work in teams
+
+*** "there must be something"
 
 [[https://twitter.com/yukihiro_matz/status/539596365865578496][matz (Yukihiro Matsumoto) on twitter]]
+
 [[http://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life][matz (Yukihiro Matsumoto) on slideshare]]
 
-- exposure to the "new language"
+"Emacs..."
+- "taught me freedom for software"
+- "taught me how to read code"
+- "raught me power of Lisp"
+- "made me a hacker"
 
-* DANKE SCHOEN!
+* THANK YOU!
