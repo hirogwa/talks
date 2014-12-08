@@ -16,7 +16,7 @@
 
 This talk is about my playing with Emacs for about two weeks.
 - your Emacs environment grows as you use it
-- we just need base knowledge
+- we want some base knowledge for a start
 
 *** Why?
 
