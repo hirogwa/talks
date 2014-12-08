@@ -89,6 +89,7 @@ C-g
 *** example: org mode (major)
 
 "personal information management and outlining tool for Emacs"
+
 [[http://orgmode.org/][org mode]]
 
 task management
@@ -139,6 +140,7 @@ revisit...
 M-x package-list-package
 
 "show line numbers in the margin"
+
 [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
 
 M-x nlinum-mode
@@ -148,6 +150,7 @@ M-x nlinum-mode
 *** example: org-tree-slide-mode (minor)
 
 "org buffer as a slide"
+
 [[https://github.com/takaxp/org-tree-slide][org-tree-slide (GitHub repo)]]
 
 M-x package-list-packge?
@@ -257,6 +260,7 @@ auto delete at save
 - "there must be something"
 
 [[https://twitter.com/yukihiro_matz/status/539596365865578496][matz (Yukihiro Matsumoto) on twitter]]
+
 [[http://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life][matz (Yukihiro Matsumoto) on slideshare]]
 
 - exposure to the "new language"
