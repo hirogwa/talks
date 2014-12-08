@@ -26,7 +26,9 @@ What editors/IDEs do you use?
 ** navigation
 
 - no Vim-like mode
+
 - naviate Emacs way
+
 C-n, C-p, C-f, C-b
 C-a, C-e
 C-d
@@ -44,40 +46,50 @@ C-x C-f
 C-x s
 
 ** more operations
-- getting help
+
+- help
 C-h k
+
 - buffers
 C-x C-b
 C-x b
 C-x k
+
 - windows
 C-x o
 C-x 2
 C-x 3
-- mergency call
-C-g
-** getting help and emergency call
+
+** emergency call
+
 - windows
 C-x 1
+
 - command
 C-g
 
 * MODE
-** mode?
-*** Major mode
+
+** Major mode
+
 .txt .py .cpp .java .org ...
 
 - "specialized facilities for working on a particular file type"
 - "mutually exclusive"
 
-*** Minor mode
+** Minor mode
+
 - "optional features which you can turn on or off"
 - "not necessarily specific to a type of file or buffer"
 
-** example 1/5: Org mode (Major)
+*** using a mode - level 1
+
+**** example: switching between major modes
+
+**** example: org mode (major)
 
 "personal information management and outlining tool for Emacs"
-[[http://orgmode.org/][Home page]]
+[[http://orgmode.org/][org mode]]
 
 task management
 - org-todo (C-c C-t)
@@ -86,40 +98,76 @@ task management
 
 export
 
-** example 2/5: org-tree-slide-mode (Minor)
-
-"org buffer as a slide"
-[[https://github.com/takaxp/org-tree-slide][GitHub repo]]
-
-M-x org-tree-slide-mode-on
-
-... by the way, export?
-
-** example 3/5: ido Mode
+**** example: ido mode (minor)
 
 [[http://www.emacswiki.org/InteractivelyDoThings][Interactively Do Things]]
 
 M-x ido-mode
 try C-x b, C-x C-f, ...
 
-** example 4/5: whitespace mode
+**** example: whitespace mode (minor)
 
 [[http://www.emacswiki.org/emacs/WhiteSpace][White Space]]
 
 M-x whitespace-mode
 
-** example 5/5: nlinum
+*** using a mode - level 2
+
+introducing ~/.emacs.d/init.el
+turn on ido-mode globally
+
+#+BEGIN_SRC emacs-lisp
+(require 'ido)
+(ido-mode t)
+#+END_SRC
+
+**** introducing C-h f and C-x C-b
+
+what are they?
+
+revisit...
+- python-mode
+- ido-mode
+- whitespace-mode
+
+**** example: nlinum (minor)
+
+M-x package-list-package
 
 "show line numbers in the margin"
 [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
 
 M-x nlinum-mode
 
+*** 
+
+*** using a mode - level 3
+
+**** example: org-tree-slide-mode (minor)
+
+"org buffer as a slide"
+[[https://github.com/takaxp/org-tree-slide][org-tree-slide (GitHub repo)]]
+
+M-x package-list-packge?
+
+revisit nlinum
+- where is it installed?
+- introducint C-h v
+- load-path
+
+installation steps
+- get source
+- add load-path
+
+M-x org-tree-slide-mode-on
+
+(export?)
+
 * CUSTOMIZE
 
 ** packaging and ~/.emacs.d/
 
-How did they work?
+How do they work?
 
 C-h f whitespace-mode
 C-h f ido-mode
@@ -142,6 +190,7 @@ install org-tree-slide-mode
 adding package archives
 
 [[http://melpa.org][MELPA]]
+
 example: highlight-current-line
 example: color-theme
 
