@@ -15,6 +15,8 @@
  that are characterized by their extensibility"
 
 This talk is about my playing with Emacs for about two weeks.
+- your Emacs environment grows as you use it
+- we just need base knowledge
 
 *** Why?
 
