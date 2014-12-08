@@ -233,7 +233,9 @@ auto delete at save
 *** auto-complete
 
 "The most intelligent auto-completion extension for GNU Emacs"
+
 [[http://cx4a.org/software/auto-complete/][Auto Complete Mode]]
+
 [[http://melpa.org/#/auto-complete][auto-complete (MELPA)]]
 
 - install
