@@ -2,32 +2,47 @@
 #+AUTHOR: Hiroki Nakagawa
 
 * HOLA!
+
 * BACKGROUND
+
 ** about this talk
 
-This is the talk about me playing with Emacs for about two weeks.
+*** What is Emacs?
 
-Why?
+[[http://en.wikipedia.org/wiki/Emacs][Emacs - Wikipedia]]
+
+"Emacs /ˈiːmæks/ and its derivatives are a family of text editors
+ that are characterized by their extensibility"
+
+This talk is about my playing with Emacs for about two weeks.
+
+*** Why?
+
 - "looks cool"
 - "good engineers use it"
 - "not an editor but an environment?"
 - "programmable editor?"
 
-Who?
+*** Who?
 
 ** editors and you
 
 What editors/IDEs do you use?
 
 [[http://www.google.ca/trends/explore#q%3D%252Fm%252F01yp0m%252C%2520%252Fm%252F07zh7%252C%2520%252Fm%252F0b6h18n%252C%2520%252Fm%252F0_x5x3g&cmpt%3Dq][trends 1]]
+
 [[http://www.google.ca/trends/explore#q%3D%252Fm%252F01yp0m%252C%2520%252Fm%252F07zh7%252C%2520%252Fm%252F0b6h18n%252C%2520%252Fm%252F01fs1d%252C%2520%252Fm%252F01r_y0&cmpt%3Dq][trends 2]]
 
 * GETTING STARTED WITH EMACS
+
 ** navigation
 
 - no Vim-like mode
 
 - naviate Emacs way
+
+C: control
+M: "meta" (alt/option)
 
 C-n, C-p, C-f, C-b
 C-a, C-e
@@ -60,7 +75,7 @@ C-x o
 C-x 2
 C-x 3
 
-** emergency call
+** emergency calls
 
 - windows
 C-x 1
@@ -82,9 +97,17 @@ C-g
 - "optional features which you can turn on or off"
 - "not necessarily specific to a type of file or buffer"
 
-** using a mode - level 1
+** using a mode 1 - built-in modes
 
 *** example: switching between major modes
+
+introducing M-x
+
+C-h k M-x
+
+M-x python-mode
+M-x c-mode
+M-x text-mode
 
 *** example: org mode (major)
 
@@ -104,6 +127,7 @@ export
 [[http://www.emacswiki.org/InteractivelyDoThings][Interactively Do Things]]
 
 M-x ido-mode
+
 try C-x b, C-x C-f, ...
 
 *** example: whitespace mode (minor)
@@ -112,7 +136,7 @@ try C-x b, C-x C-f, ...
 
 M-x whitespace-mode
 
-** using a mode - level 2
+** using a mode 2 - global setting at startup
 
 introducing ~/.emacs.d/init.el
 turn on ido-mode globally
@@ -124,7 +148,7 @@ turn on ido-mode globally
 
 restart and see what happens
 
-** using a mode - level 3
+** using a mode 3 - adding a package
 
 *** introducing C-h f and C-x C-b
 
@@ -145,7 +169,7 @@ M-x package-list-package
 
 M-x nlinum-mode
 
-** using a mode - level 4
+** using a mode 4 - adding an external package
 
 *** example: org-tree-slide-mode (minor)
 
@@ -157,7 +181,7 @@ M-x package-list-packge?
 
 revisit nlinum
 - where is it installed?
-- introducint C-h v
+- introducing C-h v
 - load-path
 
 installation steps
@@ -170,20 +194,31 @@ installation steps
 (require 'org-tree-slide)
 #+END_SRC
 
-M-x org-tree-slide-mode-on
+M-x org-tree-slide-mode
 
-** using a mode - level 5
+** using a mode 5 - using a package manager
 
 notice the annoyance
 
 introducing [[http://melpa.org][MELPA]]
 
-*** TODO example: highlight-current-line
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(let ((default-directory "~/.emacs.d/elpa/"))
+  (normal-top-level-add-subdirs-to-load-path))
+#+END_SRC
+
+*** example: highlight-current-line
 
 TODO load-path?
 
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/highlight-current-line-0.57")
 (require 'highlight-current-line)
 (global-hl-line-mode t)
 (setq highlight-current-line-high-faces nil)
@@ -194,14 +229,13 @@ TODO load-path?
 *** example: color-theme
 
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
 (color-theme-subtle-hacker)
 #+END_SRC
 
-* MORE CUSTOMIZING
+* MORE CUSTOMIZING FOR REAL SCENARIOS
 
 ** general programming
 
@@ -244,6 +278,7 @@ auto delete at save
 #+BEGIN_SRC emacs-lisp
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
 (require 'auto-complete)
+(global-auto-complete-mode t)
 #+END_SRC
 
 ** TODO Python
@@ -258,7 +293,9 @@ auto delete at save
 ** thoughts on why and why not
 
 - highly highly configurable
+
 - we work in teams
+
 - "there must be something"
 
 [[https://twitter.com/yukihiro_matz/status/539596365865578496][matz (Yukihiro Matsumoto) on twitter]]
