@@ -97,6 +97,8 @@ C-g
 - "optional features which you can turn on or off"
 - "not necessarily specific to a type of file or buffer"
 
+find, write, use minor modes ⊂ customizing Emacs
+
 ** using a mode 1 - built-in modes
 
 *** example: switching between major modes
