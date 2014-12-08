@@ -142,7 +142,10 @@ M-x whitespace-mode
 
 ** using mode 2/5 - global setting at startup
 
+ido-mode always. how?
+
 introducing ~/.emacs.d/init.el
+
 turn on ido-mode globally
 
 #+BEGIN_SRC emacs-lisp
@@ -164,6 +167,8 @@ revisit...
 - whitespace-mode
 
 *** example: nlinum (minor)
+
+not built in
 
 M-x package-list-package
 
@@ -300,7 +305,12 @@ auto delete at save
 
 *** power of extensibility
 
+default editor
+
 *** we work in teams
+
+- learning curve
+- coding standard
 
 *** "there must be something"
 
