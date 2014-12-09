@@ -101,7 +101,7 @@ C-g
 
 find, write, use minor modes ⊂ customizing Emacs
 
-** using mode 1/5 - built-in modes
+** built-in modes
 
 *** example: switching between major modes
 
@@ -140,7 +140,7 @@ try C-x b, C-x C-f, ...
 
 M-x whitespace-mode
 
-** using mode 2/5 - global setting at startup
+** ~/.emacs.d/init.el
 
 ido-mode always. how?
 
@@ -155,7 +155,7 @@ turn on ido-mode globally
 
 restart and see what happens
 
-** using mode 3/5 - adding package
+** installing package
 
 *** introducing C-h f and C-x C-b
 
@@ -170,15 +170,15 @@ revisit...
 
 not built in
 
-M-x package-list-package
-
 "show line numbers in the margin"
 
 [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
 
+M-x package-list-package
+
 M-x nlinum-mode
 
-** using mode 4/5 - external package
+** installing external package
 
 *** example: org-tree-slide-mode (minor)
 
@@ -205,7 +205,7 @@ installation steps
 
 M-x org-tree-slide-mode
 
-** using mode 5/5 - package manager
+** package manager
 
 notice the annoyance
 
@@ -247,7 +247,7 @@ M-x package-list-package
 (color-theme-subtle-hacker)
 #+END_SRC
 
-* CUSTOMIZING FOR SOME SCENARIOS
+* REVIEW: SOME SCENARIOS
 
 ** general programming
 
