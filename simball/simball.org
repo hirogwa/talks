@@ -1,4 +1,4 @@
-#+TITLE: Emacs - Practical Introduction to the Adictive Editor
+#+TITLE: Emacs - Practical Introduction to the Addictive Editor
 #+AUTHOR: Hiroki Nakagawa
 
 * HELLO!
@@ -41,7 +41,7 @@ What editors/IDEs do you use?
 
 - no Vim-like mode
 
-- naviate Emacs way
+- navigate Emacs way
 
 C: control
 M: "meta" (alt/option)
@@ -321,7 +321,7 @@ default editor
 "Emacs..."
 - "taught me freedom for software"
 - "taught me how to read code"
-- "raught me power of Lisp"
+- "taught me power of Lisp"
 - "made me a hacker"
 
 * THANK YOU!
