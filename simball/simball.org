@@ -44,15 +44,15 @@ What editors/IDEs do you use?
 $ emacs hello.py
 #+END_SRC
 
-no Vim-like mode
+no Vim-like mode.
 
 ** navigate in Emacs way
 
 [[http://www.emacswiki.org/emacs/EmacsNewbieKeyReference][Emacs Newbie Key Reference]]
 
 essentials
-- C: Control
-- M: Meta (alt/option)
+- C: control
+- M: meta (alt/option)
 
 best friends
 - C-h k
@@ -254,3 +254,5 @@ please meet: [[http://melpa.org][MELPA]]
 * THANK YOU!
 
 * \(^O^)/
+
+[[https://github.com/hirogwa/talks/tree/master/simball][slides and examples]]
