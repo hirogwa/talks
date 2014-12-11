@@ -24,12 +24,12 @@
 ** TODO book Airbnb at Seattle
    DEADLINE: <2014-12-15 Mon>
 
-* LL stuff
+* Lunch and Learn stuff
 ** LL practice run
    SCHEDULED: <2014-12-08 Mon>
 ** TODO book room for LL
    SCHEDULED: <2014-12-11 Thu>
 
 * SFU coop stuff
-** submit supervisor feedback (Toar)
+** submit supervisor feedback
    DEADLINE: <2014-12-10 Wed>
