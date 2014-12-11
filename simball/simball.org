@@ -139,9 +139,7 @@ please meet: ~/.emacs.d/init.el
 
 * CUSTOMIZE CUSTOMIZE CUSTOMIZE!
 
-** general programming
-
-*** whitspace
+** whitspace
 
 please meet: [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html][hooks]]
 
@@ -157,7 +155,7 @@ please meet: [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.ht
 (add-hook 'before-save-hook (lambda() (untabify (point-min) (point-max))))
 #+END_SRC
 
-*** line numbers: [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
+** line numbers: [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
 
 please meet: list-packages
 
@@ -173,7 +171,7 @@ M-x nlinum-mode
 (global-nlinum-mode 1)
 #+END_SRC
 
-*** color theme: [[http://melpa.org/#/color-theme][color-theme]]
+** color theme: [[http://melpa.org/#/color-theme][color-theme]]
 
 please meet: [[http://melpa.org][MELPA]]
 
@@ -191,7 +189,7 @@ please meet: [[http://melpa.org][MELPA]]
 (color-theme-subtle-hacker)
 #+END_SRC
 
-*** auto-complete
+** auto-complete
 
 "The most intelligent auto-completion extension for GNU Emacs"
 
@@ -207,12 +205,11 @@ please meet: [[http://melpa.org][MELPA]]
 (global-auto-complete-mode t)
 #+END_SRC
 
-*** (packages... where are they installed?)
+* WHAT'S NEXT?
 
-
-* TODO EXPORT YOUR CONF
-
-
+- edit documents with Emacs
+- read *.el
+- write your *.el
 
 * CONCLUSION AND FINAL THOUGHTS
 
@@ -221,12 +218,6 @@ please meet: [[http://melpa.org][MELPA]]
 - how to get help directly from Emacs
 - how to turn on/off modes
 - how to install packages
-
-** what's next?
-
-- edit documents with Emacs
-- read *.el
-- write your *.el
 
 ** thoughts on why and why not
 
@@ -243,11 +234,13 @@ please meet: [[http://melpa.org][MELPA]]
 
 [[http://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life][matz (Yukihiro Matsumoto) on slideshare]]
 
-"Emacs..."
-- "taught me freedom for software"
-- "taught me how to read code"
-- "taught me power of Lisp"
-- "made me a hacker"
+#+BEGIN_QUOTE
+Emacs...
+- taught me freedom for software
+- taught me how to read code
+- taught me power of Lisp
+- made me a hacker
+#+END_QUOTE
 
 * GRACIAS!
 
