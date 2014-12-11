@@ -171,7 +171,9 @@ M-x nlinum-mode
 (global-nlinum-mode 1)
 #+END_SRC
 
-** color theme: [[http://melpa.org/#/color-theme][color-theme]]
+** auto complete
+
+[[http://cx4a.org/software/auto-complete/][Auto Complete Mode]]
 
 please meet: [[http://melpa.org][MELPA]]
 
@@ -181,24 +183,6 @@ please meet: [[http://melpa.org][MELPA]]
              '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 #+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(require 'color-theme)
-(color-theme-initialize)
-(setq color-theme-is-global t)
-(color-theme-subtle-hacker)
-#+END_SRC
-
-** auto-complete
-
-"The most intelligent auto-completion extension for GNU Emacs"
-
-[[http://cx4a.org/software/auto-complete/][Auto Complete Mode]]
-
-[[http://melpa.org/#/auto-complete][auto-complete (MELPA)]]
-
-- install
-- make it global
 
 #+BEGIN_SRC emacs-lisp
 (require 'auto-complete)
