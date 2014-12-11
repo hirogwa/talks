@@ -235,11 +235,10 @@ please meet: [[http://melpa.org][MELPA]]
 [[http://www.slideshare.net/yukihiro_matz/how-emacs-changed-my-life][matz (Yukihiro Matsumoto) on slideshare]]
 
 #+BEGIN_QUOTE
-Emacs...
-- taught me freedom for software
-- taught me how to read code
-- taught me power of Lisp
-- made me a hacker
+Emacs taught me freedom for software
+Emacs taught me how to read code
+Emacs taught me power of Lisp
+Emacs made me a hacker
 #+END_QUOTE
 
 * GRACIAS!
