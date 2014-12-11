@@ -11,8 +11,8 @@
 
 [[http://en.wikipedia.org/wiki/Emacs][Emacs - Wikipedia]]
 
-"Emacs /ˈiːmæks/ and its derivatives are a family of text editors
- that are characterized by their extensibility"
+- Editor
+- programmable, extensible
 
 This talk is about my playing with Emacs for about two weeks.
 - your Emacs environment grows as you use it
@@ -22,8 +22,9 @@ This talk is about my playing with Emacs for about two weeks.
 
 - "looks cool"
 - "good engineers use it"
-- "not an editor but an environment?"
-- "programmable editor?"
+- mysteries
+ - "not an editor but an environment?"
+ - "programmable editor?"
 
 *** Who?
 
@@ -37,53 +38,34 @@ What editors/IDEs do you use?
 
 * GETTING STARTED WITH EMACS
 
-** navigation
+** first contact
 
-- no Vim-like mode
+#+BEGIN_SRC shell
+$ emacs hello.py
+#+END_SRC
 
-- navigate Emacs way
+no Vim-like mode
 
-C: control
-M: "meta" (alt/option)
+** navigate in Emacs way
 
-C-n, C-p, C-f, C-b
-C-a, C-e
-C-d
+[[http://www.emacswiki.org/emacs/EmacsNewbieKeyReference][Emacs Newbie Key Reference]]
 
-C-v, M-v
-M-<, M->
+- C: Control
+- M: Meta (alt/option)
 
-C-a C-k
-C-a C-space C-e M-w ... C-y
-C-a C-space C-n M-w ... C-y
+- C-x C-f
+- C-x s
+- C-x C-c
 
-C-x u
+- C-h k
+- C-x 1
+- C-g
 
-C-x C-f
-C-x s
+please meet: M-x
 
-** more operations
-
-- help
-C-h k
-
-- buffers
-C-x C-b
-C-x b
-C-x k
-
-- windows
-C-x o
-C-x 2
-C-x 3
-
-** emergency calls
-
-- windows
-C-x 1
-
-- command
-C-g
+#+BEGIN_SRC
+M-x display-time-world
+#+END_SRC
 
 * MODE
 
@@ -91,131 +73,107 @@ C-g
 
 .txt .py .cpp .java .org ...
 
-- "specialized facilities for working on a particular file type"
-- "mutually exclusive"
+- for a particular file type
+- mutually exclusive
 
-** minor mode
+*** (trivial) example
 
-- "optional features which you can turn on or off"
-- "not necessarily specific to a type of file or buffer"
+#+BEGIN_SRC shell
+$ emacs hello.py
+#+END_SRC
 
-find, write, use minor modes ⊂ customizing Emacs
-
-** built-in modes
-
-*** example: switching between major modes
-
-introducing M-x
-
-C-h k M-x
-
-M-x python-mode
-M-x c-mode
+#+BEGIN_SRC
 M-x text-mode
+M-x java-mode
+#+END_SRC
 
-*** example: org mode (major)
+*** (non-trival) example: [[http://orgmode.org/][org mode]]
+
+major mode
 
 "personal information management and outlining tool for Emacs"
-
-[[http://orgmode.org/][org mode]]
 
 task management
 - org-todo (C-c C-t)
 - org-agenda L
 - org-schedule (C-c C-s)
 
-export
+** minor mode
 
-*** example: ido mode (minor)
+- "optional features which you can turn on or off"
+- "not necessarily specific to a type of file or buffer"
+
+big part of "customizing Emacs"
+
+*** examples
 
 [[http://www.emacswiki.org/InteractivelyDoThings][Interactively Do Things]]
 
+#+BEGIN_SRC
 M-x ido-mode
+#+END_SRC
 
-try C-x b, C-x C-f, ...
+[[http://www.emacswiki.org/HighlightCurrentLine][Highlight Current Line]]
 
-*** example: whitespace mode (minor)
+#+BEGIN_SRC
+M-x hl-line-mode
+#+END_SRC
 
-[[http://www.emacswiki.org/emacs/WhiteSpace][White Space]]
+*** think global
 
-M-x whitespace-mode
+turn on ido-mode by default?
 
-** ~/.emacs.d/init.el
+turn on hi-line-mode by default?
 
-ido-mode always. how?
-
-introducing ~/.emacs.d/init.el
-
-turn on ido-mode globally
+please meet: ~/.emacs.d/init.el
 
 #+BEGIN_SRC emacs-lisp
-(require 'ido)
 (ido-mode t)
 #+END_SRC
 
-restart and see what happens
-
-** installing package
-
-*** introducing C-h f and C-x C-b
-
-what are they?
-
-revisit...
-- python-mode
-- ido-mode
-- whitespace-mode
-
-*** example: nlinum (minor)
-
-not built in
-
-"show line numbers in the margin"
-
-[[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
-
-M-x package-list-package
-
-M-x nlinum-mode
-
-** installing external package
-
-*** example: org-tree-slide-mode (minor)
-
-"org buffer as a slide"
-
-[[https://github.com/takaxp/org-tree-slide][org-tree-slide (GitHub repo)]]
-
-M-x package-list-packge?
-
-revisit nlinum
-- where is it installed?
-- introducing C-h v
-- load-path
-
-installation steps
-- get source
-- add load-path
-- require
-
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/org-tree-slide/")
-(require 'org-tree-slide)
+(global-hl-line-mode t)
 #+END_SRC
 
-M-x org-tree-slide-mode
+* CUSTOMIZE CUSTOMIZE CUSTOMIZE!
 
-** package manager
+** general programming
 
-notice the annoyance
+*** whitspace
 
-introducing [[http://melpa.org][MELPA]]
+please meet: [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html][hooks]]
 
-*** example: highlight-current-line
+#+BEGIN_SRC elisp
+; make whitespaces visible, globally
+(global-whitespace-mode 1)
 
-[[http://melpa.org/#/highlight-current-line][highlight-current-line]]
+; define target blanks
+(setq whitespace-style (quote (face trailing tabs lines)))
 
-M-x package-list-package
+; delete blanks at save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook (lambda() (untabify (point-min) (point-max))))
+#+END_SRC
+
+*** line numbers: [[http://elpa.gnu.org/packages/nlinum.html][nlinum]]
+
+please meet: list-packages
+
+#+BEGIN_SRC
+M-x list-packages
+#+END_SRC
+
+#+BEGIN_SRC
+M-x nlinum-mode
+#+END_SRC
+
+#+BEGIN_SRC
+(global-nlinum-mode 1)
+#+END_SRC
+
+*** color-theme: [[http://melpa.org/#/color-theme][color-theme]]
+
+please meet: [[http://melpa.org][MELPA]]
 
 #+BEGIN_SRC emacs-lisp
 (require 'package)
@@ -225,55 +183,10 @@ M-x package-list-package
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(let ((default-directory "~/.emacs.d/elpa/"))
-  (normal-top-level-add-subdirs-to-load-path))
-#+END_SRC
-
-M-x package-list-package
-
-#+BEGIN_SRC emacs-lisp
-(require 'highlight-current-line)
-(global-hl-line-mode t)
-#+END_SRC
-
-*** example: color-theme
-
-[[http://melpa.org/#/color-theme][color-theme]]
-
-#+BEGIN_SRC emacs-lisp
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
 (color-theme-subtle-hacker)
-#+END_SRC
-
-* REVIEW: SOME SCENARIOS
-
-** general programming
-
-*** nlinum revisited
-
-make it global
-
-#+BEGIN_SRC emacs-lisp
-(require 'nlinum)
-(global-nlinum-mode 1)
-#+END_SRC
-
-*** whitespace-mode revisited
-
-make it global
-
-#+BEGIN_SRC emacs-lisp
-(global-whitespace-mode 1)
-(setq whitespace-style (quote (face trailing tabs lines)))
-#+END_SRC
-
-auto delete at save
-
-#+BEGIN_SRC emacs-lisp
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook (lambda() (untabify (point-min) (point-max))))
 #+END_SRC
 
 *** auto-complete
@@ -292,25 +205,35 @@ auto delete at save
 (global-auto-complete-mode t)
 #+END_SRC
 
-** TODO Python
+*** (packages... where are they installed?)
 
-* MANAGE YOUR PACKAGES BETTER
 
-** TODO modularizing init files
-** TODO exporting and syncing configuration
+* TODO EXPORT YOUR CONF
+
+
 
 * CONCLUSION AND FINAL THOUGHTS
 
+** now we know...
+
+- how to get help directly from Emacs
+- how to turn on/off modes
+- how to install packages
+
+** what's next?
+
+- edit
+- read
+- write
+
 ** thoughts on why and why not
 
-*** power of extensibility
+- pinky
+- think team
+ - learning curve
+ - coding standard
 
-default editor
-
-*** we work in teams
-
-- learning curve
-- coding standard
+- your default editor
 
 *** "there must be something"
 
@@ -324,4 +247,8 @@ default editor
 - "taught me power of Lisp"
 - "made me a hacker"
 
+* GRACIAS!
+
 * THANK YOU!
+
+* \(^O^)/
