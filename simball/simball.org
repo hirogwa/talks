@@ -125,7 +125,7 @@ M-x hl-line-mode
 
 turn on ido-mode by default?
 
-turn on hi-line-mode by default?
+turn on hl-line-mode by default?
 
 please meet: ~/.emacs.d/init.el
 
@@ -139,7 +139,7 @@ please meet: ~/.emacs.d/init.el
 
 * CUSTOMIZE CUSTOMIZE CUSTOMIZE!
 
-** whitspace
+** whitespace
 
 please meet: [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Hooks.html][hooks]]
 
