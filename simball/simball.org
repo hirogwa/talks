@@ -50,14 +50,16 @@ no Vim-like mode
 
 [[http://www.emacswiki.org/emacs/EmacsNewbieKeyReference][Emacs Newbie Key Reference]]
 
+essentials
 - C: Control
 - M: Meta (alt/option)
 
-- C-x C-f
-- C-x s
-- C-x C-c
-
+best friends
 - C-h k
+- C-h v
+- C-h f
+
+emergency calls
 - C-x 1
 - C-g
 
@@ -171,7 +173,7 @@ M-x nlinum-mode
 (global-nlinum-mode 1)
 #+END_SRC
 
-*** color-theme: [[http://melpa.org/#/color-theme][color-theme]]
+*** color theme: [[http://melpa.org/#/color-theme][color-theme]]
 
 please meet: [[http://melpa.org][MELPA]]
 
