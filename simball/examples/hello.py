@@ -9,9 +9,10 @@ class MyAwesomeClass:
     @staticmethod
     def say_hello():
         print ('hello world')
-        print ('hello world')
+
     @staticmethod
     def say_hello_again():
+        pass
 
 
 if __name__ = '__main__':
