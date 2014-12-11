@@ -11,7 +11,7 @@
 
 [[http://en.wikipedia.org/wiki/Emacs][Emacs - Wikipedia]]
 
-- Editor
+- editor
 - programmable, extensible
 
 This talk is about my playing with Emacs for about two weeks.
@@ -222,9 +222,9 @@ please meet: [[http://melpa.org][MELPA]]
 
 ** what's next?
 
-- edit
-- read
-- write
+- edit documents with Emacs
+- read *.el
+- write your *.el
 
 ** thoughts on why and why not
 
